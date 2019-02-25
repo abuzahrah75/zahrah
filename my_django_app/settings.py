@@ -26,7 +26,7 @@ SECRET_KEY = "n*z@*&0ein2+poiu$rhkv2c0a@^2gbzg=g!_e%+dz#2ik5f$g2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["azmi.net", "albadr.net","test.net", "192.168.0.112","albadr.amija.com.my"]
+ALLOWED_HOSTS = ["azmi.net", "albadr.net","taz.amija.com.my", "192.168.0.112","albadr.amija.com.my"]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
