@@ -33,8 +33,8 @@ urlpatterns = [
     path("tugasan/", include("tugasan.urls")),
     path("pentadbiran/", include("pentadbiran.urls")),
     path("dokumen/", include("dokumen.urls")),
-    
-    
+    path("folder/", include("folder.urls")),
+    path("conveyancing/", include("conveyancing.urls")),
     
     
     path('password-reset/',
