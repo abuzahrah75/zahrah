@@ -28,14 +28,16 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name="pengguna/login.html"), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name="pengguna/logout.html"), name='logout'),
-    path("projek/", include("projek.urls")),
+    path("projek/", include("projek.urls")), 
     path("pelanggan/", include("pelanggan.urls")),
     path("tugasan/", include("tugasan.urls")),
     path("pentadbiran/", include("pentadbiran.urls")),
     path("dokumen/", include("dokumen.urls")),
     path("folder/", include("folder.urls")),
     path("conveyancing/", include("conveyancing.urls")),
-    
+    path("individu/", include("individu.urls")),
+    path("syarikat/", include("syarikat.urls")),
+    path("agensi/", include("agensi.urls")),
     
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
@@ -50,5 +52,5 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(
              template_name="pengguna/password_reset_complete.html"), name='password_reset_complete'),
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

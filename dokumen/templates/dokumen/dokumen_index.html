@@ -2,4 +2,29 @@
 
 {% block content %}
   <h4>Dashboard Dokumen</h4>
+
+<h5><a href="{% url 'dokumen-testupload2' %}">[Upload new file]</a></h5>
+  <table class="table">
+      <tr>
+          <td>#</td>
+          <td>Description</td>
+          <td>Document</td>
+          <td>Uploaded at</td>
+          <td>ID/PK</td>
+      </tr>
+  {% for row in mydoc %}
+      <tr>
+          <td>{{ forloop.counter}}</td>
+          <td>{{ row.description }}</td>
+          <td><a href="{{row.document.url}}" >{{ row.document }}</a></td>
+          <td>{{ row.uploaded_at }}</td>
+          <td>{{ row.id }}</td>
+      </tr>
+  {% endfor %}
+</table>
+<br>
+<br>
+<br>
+<h5>Test merger using testmerger1.docx</h5>
+<h5><a href="{% url 'dokumen-testmerger' %}">[Test Merger]</a></h5>
 {% endblock content %}

@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index, name='dokumen-index'),
    	path('testmerger', views.testmerger, name='dokumen-testmerger'),
     path('testupload', views.testupload, name='dokumen-testupload'),
+    path('testupload2', views.testupload2, name='dokumen-testupload2'),
 	
 ]

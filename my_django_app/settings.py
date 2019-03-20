@@ -59,6 +59,10 @@ INSTALLED_APPS = [
     'pentadbiran.apps.PentadbiranConfig',
     'dokumen.apps.DokumenConfig',
     'folder.apps.FolderConfig',
+    'individu.apps.IndividuConfig',
+    'syarikat.apps.SyarikatConfig',
+    'agensi.apps.AgensiConfig',
+
 
 
 

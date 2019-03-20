@@ -5,9 +5,10 @@ from django.urls import reverse
 
 def index(request):
 
-    #return HttpResponse("testing")
-    return render(request, 'home/homeindex.html')
-
+    if request.user.is_authenticated:
+        return render(request, 'home/homeindex.html')
+    else:
+        return render(request, 'home/homeindex2.html')
 
 def testmerger(request):
 
