@@ -24,7 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls), 
     path("", include("home.urls")),
     path("home/", include("home.urls")),
-    path("cuba/", include("testtenant.urls")),
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name="pengguna/login.html"), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name="pengguna/logout.html"), name='logout'),
@@ -38,6 +37,7 @@ urlpatterns = [
     path("individu/", include("individu.urls")),
     path("syarikat/", include("syarikat.urls")),
     path("agensi/", include("agensi.urls")),
+    path("akaun/", include("akaun.urls")),
     
     path('password-reset/',
          auth_views.PasswordResetView.as_view(

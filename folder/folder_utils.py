@@ -3,13 +3,13 @@ from .models import ClientFolder
 
 def get_responden(self,folderID,kategori):
     myresponden=""
-    if kategori="IN":
+    if kategori=="IN":
         myresponden=get_individu(folderID)
     
-    elif kategori="SY":
+    elif kategori=="SY":
         myresponden=get_syarikat(folderID)
 
-    elif kategori="AG":
+    elif kategori=="AG":
         myresponden=get_agensi(folderID)
     
     else:
@@ -34,3 +34,6 @@ def get_ngo(self,ngoID=0):
     return "Maklumat NGO"
 
 
+def get_folder(self):
+    folder=ClientFolder.objects.all()
+    return folder

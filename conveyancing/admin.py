@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Conveyancing
+from .models import Conveyancing, JenisHartanah
 
 
 class ConveyancingAdmin(admin.ModelAdmin):
@@ -8,3 +8,4 @@ class ConveyancingAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Conveyancing, ConveyancingAdmin)
+admin.site.register(JenisHartanah)

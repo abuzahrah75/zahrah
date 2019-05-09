@@ -1,4 +1,45 @@
 {% extends "pengguna/base.html" %}
 {% block content %}
   <h5>Dashboard Pelanggan</h5>
+
+<div class="card">
+    <div class="card-body">
+        Carian Pelanggan: 
+        <form action="">
+            <input type="text"> 
+            <input type="button" value="CARI">
+        </form><br>
+        Carian Folder: 
+        <form action="">
+            <input type="text"> 
+            <input type="button" value="CARI">
+        </form>
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Pelanggan Semasa :</h3>
+    </div>
+    <div class="card-body">
+       
+       <table class="table">
+           <tr>
+               <td>#</td>
+               <td>RUJUKAN</td>
+               <td>PELANGGAN</td>
+               <td>KATEGORI</td>
+               <td>STATUS</td>
+           </tr>
+           {% for row in myfolder %}
+           <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="">{{ row.rujukan }}</a></td><td>{{ row }}</td>
+            <td>{{ row.get_kategori_display }}</td><td>{{ row.get_status_folder_display }}</td>
+           </tr>
+           {% endfor %}
+       </table>
+    </div>
+</div>
 {% endblock content %}

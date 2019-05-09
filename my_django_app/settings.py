@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SITE_ID = 1
-
+MPTT_ADMIN_LEVEL_INDENT = 15
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -26,7 +26,7 @@ SECRET_KEY = "n*z@*&0ein2+poiu$rhkv2c0a@^2gbzg=g!_e%+dz#2ik5f$g2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["azmi.net", "albadr.net","taz.amija.com.my", "192.168.0.107","albadr.amija.com.my"]
+ALLOWED_HOSTS = ["zahrah.net", "albadr.net","taz.amija.com.my", "192.168.0.109","albadr.amija.com.my"]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -46,10 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "rest_framework.authtoken",
-    "polls",
-    "tenants",
     "crispy_forms",
-    "testtenant.apps.TesttenantConfig",
     'pengguna.apps.PenggunaConfig',
     'home.apps.HomeConfig',
     'conveyancing.apps.ConveyancingConfig',
@@ -62,6 +59,9 @@ INSTALLED_APPS = [
     'individu.apps.IndividuConfig',
     'syarikat.apps.SyarikatConfig',
     'agensi.apps.AgensiConfig',
+    'akaun.apps.AkaunConfig',
+    'mptt',
+    'polls','tenants',
 
 
 
