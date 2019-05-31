@@ -26,7 +26,9 @@ SECRET_KEY = "n*z@*&0ein2+poiu$rhkv2c0a@^2gbzg=g!_e%+dz#2ik5f$g2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["zahrah.net", "albadr.net","taz.amija.com.my", "192.168.0.109","albadr.amija.com.my"]
+ALLOWED_HOSTS = ["zahrah.net", "albadr.net", "taz.amija.com.my",
+                 "192.168.0.102", "192.168.0.109", "abuzahrah.net", 
+                 "192.168.43.128"]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -60,6 +62,8 @@ INSTALLED_APPS = [
     'syarikat.apps.SyarikatConfig',
     'agensi.apps.AgensiConfig',
     'akaun.apps.AkaunConfig',
+    'contacts.apps.ContactsConfig',
+    'invoice.apps.InvoiceConfig',
     'mptt',
     'polls','tenants',
 

@@ -18,6 +18,9 @@ class AkaunBank (models.Model):
 
     class Meta:
         verbose_name_plural='Akaun Bank'
+    
+    def __str__(self):
+        return self.nama + ' ('+ self.no_akaun + ') - ' + self.jenis
 
 class KategoriTransaksi(MPTTModel):
     nama = models.CharField(max_length=200, unique=True)

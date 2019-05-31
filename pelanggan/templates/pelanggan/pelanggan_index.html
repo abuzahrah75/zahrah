@@ -35,8 +35,8 @@
            {% for row in myfolder %}
            <tr>
             <td>{{ forloop.counter }}</td>
-            <td><a href="">{{ row.rujukan }}</a></td><td>{{ row }}</td>
-            <td>{{ row.get_kategori_display }}</td><td>{{ row.get_status_folder_display }}</td>
+            <td><a href="{% url 'pelanggan-details' row.id %}">{{ row.rujukan }}</a></td><td>{{ row }}</td>
+            <td>{{ row.kategori }}</td><td>{{ row.get_status_folder_display }}</td>
            </tr>
            {% endfor %}
        </table>

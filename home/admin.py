@@ -1,7 +1,7 @@
 from django.contrib import admin
 #from mptt.admin import MPTTModelAdmin
 from mptt.admin import DraggableMPTTAdmin
-from .models import Kategori, Cawangan
+from .models import Kategori, Cawangan, Partners, Solicitors, Staff
 
 #admin.site.register(Kategori, MPTTModelAdmin)
 admin.site.register(
@@ -21,3 +21,6 @@ admin.site.register(
 )
 
 admin.site.register(Cawangan)
+admin.site.register(Partners)
+admin.site.register(Solicitors)
+admin.site.register(Staff)

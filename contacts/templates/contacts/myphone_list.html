@@ -1,0 +1,27 @@
+
+{% block content %}
+  <div class="card">
+      <div class="card-body">
+        <a href="{% url 'myphone-create' contact.id %}" class="tag tag-blue">Add New Phone</a>
+        <table class="table">
+            <tr>
+                <td>Phone Number</td>
+                <td>Type</td>
+                <td>Actions</td>
+            </tr>
+            {% for row in phone %}
+            <tr>
+                <td>{{row}}</td>
+                <td>{{row.get_kategori_display}}</td>
+                <td>
+                    <a href="{% url 'myphone-update' contact.id row.id %}" class="btn btn-success btn-sm"><span
+                            class="fa fa-pencil"></span></a>
+                    <a href="{% url 'myphone-delete' contact.id row.id %}" class="btn btn-danger btn-sm"><span
+                            class="fa fa-close"></span></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+  </div>
+{% endblock content %}

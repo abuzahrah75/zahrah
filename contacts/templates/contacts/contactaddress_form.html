@@ -1,0 +1,23 @@
+{% extends 'pengguna/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>TAZ Legal Contacts Form</h2>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <button type="submit">Save</button>
+
+            <a href="{% url 'mycontact-update' pk %}" class="tag tag-red">Nevermind</a>
+        </form>
+    </div>
+    <h1>{{object}}</h1>
+</div>
+
+{% endblock content %}

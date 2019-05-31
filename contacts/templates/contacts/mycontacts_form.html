@@ -1,0 +1,41 @@
+{% extends 'pengguna/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+<h2>TAZ Legal Contacts Form</h2>
+    </div>
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Save</button>
+
+        <a href="{% url 'mycontact-detail' mycontact.id %}" class="tag tag-red">Nevermind</a>
+    </form>
+</div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                {% include "contacts/myphone_list.html" with phone=extra.phone contact=mycontact %}
+                {% include "contacts/myemail_list.html" with phone=extra.email contact=mycontact %}
+            </div>
+            <div class="col-md-6">
+                {% include "contacts/myaddress_list.html" with phone=extra.alamat contact=mycontact %}
+            </div>
+        </div>
+    </div>
+</div>
+      
+
+
+
+
+
+
+{% endblock %}

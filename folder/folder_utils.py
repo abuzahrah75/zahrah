@@ -37,3 +37,8 @@ def get_ngo(self,ngoID=0):
 def get_folder(self):
     folder=ClientFolder.objects.all()
     return folder
+
+
+def get_client(self, pk):
+    folder = ClientFolder.objects.get(id=pk)
+    return folder

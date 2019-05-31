@@ -1,0 +1,93 @@
+{% extends "pengguna/base.html" %}
+{% block content %}
+  <div class="card">
+     <div class="card-header">
+         <h3 class="card-title">Cilent Folder Details :</h3>
+
+     </div>
+     <div class="card-body">
+         <table width='100%'>
+             <tr valign="top"><td width='50%'>
+                 <table width='100%'>
+                    <tr>
+                        <td width="25%">Nama</td>
+                        <td>{{ myclient }}</td>
+                    </tr>
+                    <tr>
+                        <td>Rujukan</td>
+                        <td>{{myclient.rujukan}}</td>
+                    </tr>
+                    <tr>
+                        <td>Kategori</td>
+                        <td>
+                            {% for parent in myclient.kategori.get_ancestors %}
+                            <a href="">{{ parent.nama }}</a> > 
+                            {% endfor %}
+                            {{myclient.kategori}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>{{myclient.get_status_folder_display}}</td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Matter</td>
+                        <td>{{mymatter}}</td>
+                    </tr>
+                    <tr>
+                        <td>Matter Description</td>
+                        <td>{{mymatter}}</td>
+                    </tr>
+                    <tr>
+                        <td>Partner in Charge</td>
+                        <td>{{myclient.partner}}</td>
+                    </tr>
+                    <tr>
+                        <td>Solicitor in Charge</td>
+                        <td>{{myclient.solicitor}}</td>
+                    </tr>
+                    <tr>
+                        <td>Support Staff</td>
+                        <td>{{myclient.staff}}</td>
+                    </tr>
+                    <tr>
+                        <td>Opening Date</td>
+                        <td>{{myclient.opening_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Closing Date</td>
+                        <td>{{myclient.closing_date}}</td>
+                    </tr>
+                 </table>
+             </td>
+            <td>
+                <table width="100%">
+                    {% for row in contacts.phone %}
+                    <tr>
+                        <td width="25%">{{row.get_kategori_display}}</td>
+                        <td>{{ row }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% for row in contacts.email %}
+                    <tr>
+                        <td width="25%">{{row.get_kategori_display}}</td>
+                        <td>{{ row }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% for row in contacts.alamat %}
+                    <tr valign="top">
+                        <td width="25%">{{row.get_kategori_display}}</td>
+                        <td>{{ row.get_addr_br|safe }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </td>
+            </tr>
+             
+         </table>
+        
+    </div>
+    
+  </div>
+{% endblock content %}

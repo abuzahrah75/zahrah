@@ -20,3 +20,27 @@ class Cawangan(models.Model):
 
     def __str__(self):
         return self.ringkas
+
+
+class Partners(models.Model):
+    nama = models.CharField(max_length=200, default='')
+    initial = models.CharField(max_length=21, default='', blank=True, null=True)
+
+    def __str__(self):
+        return self.nama
+
+class Solicitors(models.Model):
+    nama = models.CharField(max_length=200, default='')
+    initial = models.CharField(
+        max_length=21, default='', blank=True, null=True)
+
+    def __str__(self):
+        return self.nama
+
+class Staff(models.Model):
+    nama = models.CharField(max_length=200, default='')
+    initial = models.CharField(
+        max_length=21, default='', blank=True, null=True)
+        
+    def __str__(self):
+        return self.nama

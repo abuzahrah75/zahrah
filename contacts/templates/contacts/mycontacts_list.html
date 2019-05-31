@@ -1,0 +1,47 @@
+{% extends 'pengguna/base.html' %}
+
+
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">TAZ Legal Contacts List</h3>
+    </div>
+    
+
+  <div class="card-body">
+    <form action="">
+        <input type="text"><input type="submit" value="Search Contacts">
+    </form><br>
+    
+ <a href="{% url 'mycontact-create' %}" class="btn btn-blue btn-sm">Add contact</a>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>No. KP / Passport</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in people %}
+        <tr>
+            <td><a href="{% url 'mycontact-detail' person.pk %}">{{ person.nama }}</a></td>
+            <td>{{ person.get_contact_kp }}</td>
+
+            <td>
+                <a href="{% url 'mycontact-update' person.pk %}" class="btn btn-success btn-sm"><span class="fa fa-pencil"></span></a>
+                <a href="{% url 'mycontact-delete' person.pk %}" class="btn btn-danger btn-sm"><span class="fa fa-close"></span></a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No contact in the database. <a href="{% url 'mycontact-create' %}">Add the first contact</a>.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+{% endblock %}

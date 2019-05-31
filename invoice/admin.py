@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import InvoiceParticular, InvoiceItem
 
-# Register your models here.
+admin.site.register(InvoiceParticular)
+admin.site.register(InvoiceItem)

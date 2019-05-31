@@ -1,0 +1,102 @@
+{% extends "pengguna/base.html" %}
+{% block content %}
+  <div class="card">
+      <div class="card-header">
+          <h4>TAZ Legal Contact Detail: </h4>
+      </div>
+      <div class="card-body">
+        <a href="{% url 'mycontact-update' mycontact.id %}" class="tag tag-blue">Edit Contact Info</a>
+        
+        <div class="row">
+          <div class="col-md-6">
+              <table width="100%">
+                  <tr><td width="25%">Name</td>
+                      <td>{{mycontact.nama}}</td></tr>
+                    <tr><td>NRIC / Passport</td>
+                        <td>{{mycontact.get_contact_kp}}</td></tr>
+                    {% if mycontact.no_kp_lama %}  
+                    <tr><td>Old IC</td>
+                        <td>{{mycontact.no_kp_lama}}</td></tr>
+                    {% endif %}
+                    <tr><td>Nationality</td>
+                        <td>{{mycontact.warganegara}}</td>
+                        </tr>
+                        {% for row in extra.phone %}
+                    <tr><td>{{row.get_kategori_display}}</td>
+                        <td>{{row}}</td></tr>
+                        {% endfor %}
+                    {% for row in extra.email %}
+                        <tr><td>{{row.get_kategori_display}}</td>
+                            <td>{{row}}</td></tr>
+                    {% endfor %}
+                    
+              </table>
+                  
+                 
+                 
+          </div>
+          <div class="col-md-6">
+              <table width="100%">
+                {% for row in extra.alamat %}
+                  <tr valign="top">
+                      <td width="25%">{{row.get_kategori_display}}</td>
+                      <td>{{row.get_addr_br|safe}}</td>
+                  </tr>
+              {% endfor %}
+              </table>
+          </div>
+          
+        </div>
+        </div>
+  </div>
+  <div id="accordion">
+
+      <div class="card">
+          <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                 <h4>Current Folder:</h4>
+              </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          Ref: <br>
+                          Category: <br>
+                      </div>
+                      <div class="col-md-6">
+                        Progress : <br>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="card">
+          <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                  Billing
+              </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                  Lorem ipsum..
+              </div>
+          </div>
+      </div>
+
+      <div class="card">
+          <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                  Task
+              </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                  Lorem ipsum..
+              </div>
+          </div>
+      </div>
+
+  </div>
+{% endblock content %}

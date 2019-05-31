@@ -1,0 +1,14 @@
+{% extends "pengguna/base.html" %}
+{% block content %}
+  <div class="card">
+      <div class="card-header">
+          <h3 class="card-title">Delete Contact</h3>
+      </div>
+      <div class="card-body">
+          <form method="post">{% csrf_token %}
+              <p>Are you sure you want to delete "{{ object }}"?</p>
+              <input type="submit" value="Confirm">
+          </form>
+      </div>
+  </div>
+{% endblock content %}

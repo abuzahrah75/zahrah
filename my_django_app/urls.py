@@ -38,7 +38,10 @@ urlpatterns = [
     path("syarikat/", include("syarikat.urls")),
     path("agensi/", include("agensi.urls")),
     path("akaun/", include("akaun.urls")),
-    
+    path("contacts/", include("contacts.urls")),
+    path("invoice/", include("invoice.urls")),
+
+
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name="pengguna/password_reset.html"), name='password_reset'),
