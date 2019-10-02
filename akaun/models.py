@@ -35,3 +35,22 @@ class KategoriTransaksi(MPTTModel):
 
     class Meta:
         verbose_name_plural = 'Kategori Transaksi'
+       
+
+
+class RightsSupport(models.Model):
+
+    class Meta:
+
+        managed = False  # No database table creation or deletion  \
+        # operations will be performed for this model.
+
+        permissions = (
+            ('level1', 'Level 1 Permission'),
+            ('level2', 'Level 2 Permission'),
+            ('level3', 'Level 3 Permission'),
+            ('level4', 'Level 4 Permission'),
+            ('level5', 'Level 5 Permission'),
+            ('level6', 'Level 6 Permission'),
+            ('level7', 'Level 7 Permission'),
+        )

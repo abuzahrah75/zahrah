@@ -10,8 +10,9 @@
         <table class="table">
             <tr class="font-weight-bold">
                 <td>#</td>
-                <td>Folder</td>
-                <td>Bil No.</td>
+                <td>Client</td>
+                <td>Ref.</td>
+                <td>Bill No.</td>
                 <td>Open Date</td>
                 <td>Total</td>
                 <td>Action</td>
@@ -20,11 +21,13 @@
             <tr>
                 <td>{{forloop.counter}}</td>
                 <td>{{row.folder}}</td>
+                <td>{{row.folder.rujukan}}</td>
                 <td>{{row.bil_no}}</td>
                 <td>{{row.open_date}}</td>
                 <td>RM {{row.total}}</td>
                 <td>
-
+                    <a href="" class="btn btn-small"><span class="fa fa-pencil"></span></a>
+                    <a href="" class="btn btn-small"><span class="fa fa-file-text"></span></a>
                 </td>
             </tr>
             {% endfor %}

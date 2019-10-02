@@ -2,6 +2,7 @@ from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
 from home.models import Kategori, Partners, Solicitors, Staff
 from contacts.models import *
+from PIL import Image
 
 class ClientFolder(models.Model):
     KATEGORI_PELANGGAN = (
@@ -30,8 +31,19 @@ class ClientFolder(models.Model):
     opening_date=models.DateField(blank=True, null=True)
     closing_date=models.DateField(blank=True, null=True)
 
+    image = models.ImageField(default='folder_img/default2.jpg', upload_to='folder_img')
+
     class Meta:
         verbose_name_plural = "Client Folder"
 
     def __str__(self):
         return f'{self.nama}'
+    
+    def save(self, *args, **kwargs):
+        super().save()
+        img = Image.open(self.image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)

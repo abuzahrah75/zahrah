@@ -1,3 +1,4 @@
+
 """pollsapi URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -57,3 +58,6 @@ urlpatterns = [
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+admin.site.site_title = "TAZ Legal 2019"
+admin.site.site_header = "TAZ Legal 2019 Admin" 
+admin.site.index_title = "ADMIN" 
